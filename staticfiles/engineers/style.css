@@ -1,0 +1,734 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+    color: #00aba9;
+    overflow-x: hidden;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    color: #00aba9;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("image/founderbig.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #00aba9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-image:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 30px #00aba9;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #00aba9;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    color: #00aba9;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #00aba9;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 30%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project .btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background: #00aba9;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.project:hover .btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* Testimonials section */
+.testimonials {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial {
+    margin: 15px 0;
+    padding: 10px;
+    border-left: 5px solid #00aba9;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .project {
+        flex: 1 1 100%;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Animation styles */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Additional styles for animations */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.bounce {
+    animation: bounce 0.5s infinite;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e1e1e;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu a {
+    margin: 10px 0;
+    color: #00aba9;
+}
+
+ .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background: #00aba9;
+    margin: 4px 0;
+    transition: transform 0.3s;
+} 
+
+ /* Hamburger active state */
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+} 
+
+p {
+    color: #ffffff;
+    text-decoration: none;
+    /* font-weight: bold; */
+    transition: color 0.3s;
+}
+
+p::selection {
+    background-color: #eeff00; /* Bright yellow selection background */
+    color: #0e0e0e; /* Dark text color when selected */
+}
+
+/* reserch style*/
+#research {
+    margin: 50px 0;
+    padding: 40px 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+#research h2 {
+    color: #00aba9;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #00aba9;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.project h3 {
+    color: #00aba9;
+    margin-bottom: 10px;
+}
+
+.project p {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.view-details {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #00aba9;
+    color: #0e0e0e;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.view-details:hover {
+    background: #0b9176;
+    transform: scale(1.05);
+}
+
+.project-details {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #2b2b2b;
+    border-radius: 10px; /* Initially hidden */
+}
+
+.project img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* skill*/
+#skills {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark background to match the research section */
+    border-radius: 5px;
+    color: #ffffff; /* White text for better contrast */
+}
+
+#skills h2 {
+    font-size: 24px;
+    color: #00aba9; /* Teal color for heading */
+    margin-bottom: 15px;
+}
+
+#skills ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0; /* Remove default padding */
+}
+
+#skills li {
+    font-size: 16px;
+    color: #ffffff; /* White text for skills */
+    margin-bottom: 10px;
+    padding: 10px; /* Add some padding for spacing */
+    background-color:#2b2b2b; /* Light teal background for list items */
+    border-radius: 3px; /* Rounded corners for list items */
+    box-shadow: 0 2px 5px #2b2b2b; /* Subtle shadow effect */
+}
+/* about*/
+#about {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark background to match other sections */
+    border-radius: 5px;
+    color: #ffffff; /* White text for better contrast */
+}
+
+#about h2 {
+    font-size: 24px;
+    color: #00aba9; /* Teal color for heading */
+    margin-bottom: 15px;
+}
+
+#about p {
+    font-size: 16px;
+    line-height: 1.5; /* Improve readability */
+    margin-bottom: 15px; /* Spacing between paragraphs */
+    background-color: #2b2b2b; /* Light teal background for paragraphs */
+    padding: 10px; /* Padding for better spacing */
+    border-radius: 3px; /* Rounded corners for paragraphs */
+    box-shadow: 0 2px 5px #2b2b2b; /* Subtle shadow effect */
+}
+
+/*Blog*/
+#blog {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark background to match other sections */
+    border-radius: 5px;
+    color: #ffffff; /* White text for better contrast */
+}
+
+#blog h2 {
+    font-size: 24px;
+    color: #00aba9; /* Teal color for heading */
+    margin-bottom: 15px;
+    text-align: center; /* Centered heading for a clean look */
+}
+
+.hobby {
+    margin: 20px 0; /* Space between hobbies */
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hobby h3 {
+    margin: 10px 0;
+    color: #00aba9; /* Teal color for hobby titles */
+}
+
+.hobby p {
+    margin-bottom: 10px; /* Space between paragraph and image */
+}
+
+.hobby-image {
+    width: 100%; /* Responsive image */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 400px; /* Maximum width for larger screens */
+    display: block; /* Center images */
+    margin: 0 auto; /* Center images */
+}
+
+.hobby {
+    margin-bottom: 20px;
+}
+
+.hobby-images {
+    display: flex;
+    flex-wrap: wrap; /* Allows images to wrap onto the next line */
+    justify-content: space-between; /* Distributes space evenly */
+}
+
+.hobby-image-container {
+    flex: 1; /* Each image container will take up equal space */
+    min-width: 200px; /* Minimum width to ensure images are not too small */
+    margin-right: 10px; /* Space between images */
+}
+
+.hobby-image-container:last-child {
+    margin-right: 0; /* Remove margin on the last container */
+}
+
+.hobby-image {
+    width: 100%; /* Makes the image responsive to the container */
+    height: 500px; /* Fixed height for the images */
+    object-fit: cover; /* Ensures the image covers the area without distorting the aspect ratio */
+    border-radius: 8px; /* Optional: add rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: add a subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.hobby-image:hover {
+    transform: scale(1.05); /* Slightly enlarge the image on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Increase shadow effect on hover */
+}
+
+/*my work*/
+#projects {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark background to match other sections */
+    border-radius: 5px;
+    color: #ffffff; /* White text for better contrast */
+}
+
+#projects h2 {
+    font-size: 24px;
+    color: #00aba9; /* Teal color for heading */
+    margin-bottom: 15px;
+    text-align: center; /* Centered heading for a clean look */
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 30%; /* Responsive flex layout */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.project h3 {
+    color: #00aba9; /* Teal color for project title */
+    margin-bottom: 10px;
+}
+
+.project p {
+    margin: 10px 0;
+    line-height: 1.5; /* Improve readability */
+}
+
+.project .view-details {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #00aba9; /* Button background color */
+    color: #000; /* Button text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners for button */
+    transition: background 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.project .view-details:hover {
+    background: #0b9176; /* Darker teal on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/*Exprience*/
+#experience {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark background to match other sections */
+    border-radius: 5px;
+    color: #ffffff; /* White text for better contrast */
+}
+
+#experience h2 {
+    font-size: 24px;
+    color: #00aba9; /* Teal color for heading */
+    margin-bottom: 15px;
+    text-align: center; /* Centered heading for a clean look */
+}
+
+#experience > div {
+    margin: 15px 0; /* Space between experiences */
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#experience h3 {
+    color: #00aba9; /* Teal color for job titles */
+    margin-bottom: 10px;
+}
+
+#experience p {
+    margin: 10px 0;
+    line-height: 1.5; /* Improve readability */
+}
+/*Testimonial*/
+#testimonials {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #1e1e1e; /* Dark background to match other sections */
+    border-radius: 5px;
+    color: #ffffff; /* White text for better contrast */
+}
+
+#testimonials h2 {
+    font-size: 24px;
+    color: #00aba9; /* Teal color for heading */
+    margin-bottom: 15px;
+    text-align: center; /* Centered heading for a clean look */
+}
+
+.testimonial {
+    margin: 15px 0; /* Space between testimonials */
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial p {
+    font-style: italic; /* Italic text for the quote */
+    margin-bottom: 10px;
+}
+
+.testimonial cite {
+    display: block; /* Separate cite from quote */
+    color: 	#00aba9; /* Teal color for the client's name */
+    text-align: right; /* Align cite to the right */
+}
+
+
+/* Contact Section */
+#contact {
+    padding: 50px 20px;
+    background-color: #1e1e1e;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+#contact h2 {
+    font-size: 2em;
+    color: #00aba9;
+    margin-bottom: 20px;
+}
+
+
+/* Form elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    color: #ccc;
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Input and Textarea styles */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00aba9; /* Focus effect with your preferred color */
+}
+
+/* Button styles */
+button.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #00aba9;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+button.btn:hover {
+    background-color: #008f87; /* Slightly darker shade on hover */
+    transform: translateY(-3px); /* Lifting effect */
+}
+
+/* Scroll reveal animation */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    section#contact {
+        padding: 40px 15px;
+    }
+
+    section#contact h2 {
+        font-size: 1.8rem;
+    }
+
+    button.btn {
+        font-size: 1rem;
+    }
+}
+
+/* footer secton */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    margin-top: 10px;
+}
+.social-links {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-links a {
+    color: #00aba9;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #00aba9;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #00aba9;
+    color: #0e0e0e;
+}

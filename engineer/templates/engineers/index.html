@@ -1,0 +1,227 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Santunu Kaysar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'engineers/image/founder.jpg' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'engineers/style.css' %}">
+</head>
+
+<body>
+    <header>
+        <img src="{% static 'engineers/image/founder.jpg' %}" alt="Profile" class="profile-image">
+        <nav>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">My works</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about" class="scroll-reveal fade-in">
+            <h2>About Me</h2>
+            <p>My name Santunu Kaysar i'm 22-year-old a technical student majoring in computer science. As a passionate problem solver, I actively engages with platforms like LeetCode and Codeforces to hone my skills. Currently, I'm deep into my studies in Data Structures and Algorithms (DSA), striving to master the foundations of computer science.</p>
+            <p>I'm also founding engineer at ServerCodeSocity, where I applies my technical expertise to build innovative solutions for programmer and problem solver.</p>
+            <p>In addition to his technical pursuits, I'm highly conscious of environmental issues such as air pollution, global warming, and climate change. I believes that everyone has a responsibility to be aware and proactive in addressing these global challenges.So, my dream is to contribute to making a more beautiful world, where technology and environmental sustainability go hand in hand.</p>
+        </section>
+        
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming Languages: Java, Python, C++</li>
+                <li>Web Development: HTML, CSS, JavaScript, Django</li>
+                <li>Data Structures and Algorithms</li>
+                <li>Database Management: MySQL</li>
+            </ul>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <div>
+                <h3>Founding Engineer at ServerCodeSocity</h3>
+                <p>Led a team of developers to create robust server-side applications, improving overall performance by 20%...</p>
+            </div>
+            <div>
+                <h3>Intern at Tech Solutions</h3>
+                <p>Worked on various client projects, including web development and database management...</p>
+            </div>
+        </section>
+        
+        <section id="projects" class="scroll-reveal fade-in">
+            <h2>My Works</h2>
+        
+            <div class="project-list">
+                <div class="project">
+                    <h3>LeetCode Problem Solver</h3>
+                    <p>A website that provides details of my works...</p>
+                    <a href="https://leetcode.com/u/shantanumahin/" target="_blank" class="view-details">View Work</a>
+                    <div class="project-details">
+                        <p>More details about my work...</p>
+                        <img src="{% static 'engineers/image/leetcode.png' %}" alt="LeetCode Profile">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="research" class="scroll-reveal fade-in">
+            <h2>Interest in</h2>
+            <div class="project">
+                <h3>Nasa Climate Research</h3>
+                <p>A web application that educates users about climate change and its effects on our planet.</p>
+                <a href="https://science.nasa.gov/climate-change/" class="view-details" target="_blank">View Research</a>
+                <div class="project-details">
+                    <p>NASA's Climate Research provides valuable insights into the causes and effects of global climate change, offering tools and resources for better understanding and promoting climate awareness.</p>
+                    <img src="{% static 'engineers/image/research.png' %}" alt="Climate Awareness Site">
+                </div>
+            </div>
+        </section>
+        <section id="hobbies" class="scroll-reveal fade-in">
+            <h2>Hobbies</h2>
+            <p>Here are some of my favorite hobbies that I enjoy in my free time:</p>
+            
+            <div class="hobby">
+                <h3>Reading</h3>
+                <p>I love to read non-fiction books. Here are two books I highly recommend:</p>
+                <div class="hobby-images">
+                    <div class="hobby-image-container">
+                        <h4>Atomic Habits</h4>
+                        <img src="{% static 'engineers/image/atomichabits.jpeg' %}" alt="Reading Book 1" class="hobby-image">
+                        <p>by <i> James Clear</i></p>
+                    </div>
+                    <div class="hobby-image-container">
+                        <h4>The think you can See When you only slow down.</h4>
+                        <img src="{% static 'engineers/image/thethinkyou.jpg' %}" alt="Reading Book 2" class="hobby-image">
+                        <p>by <i>Heamin Sunim</i></p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="hobby">
+                <h3>Watching Movies</h3>
+                <p>I enjoy watching movies. I have watched:</p>
+                <h4><li>Life is beautiful(2022)</li>
+                <li>3idiots</li>
+                </h4>
+                
+            </div>
+        
+        </section>
+        
+        <section id="testimonials" class="scroll-reveal fade-in testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial">
+                <p>"Santunu is an exceptional engineer and a true team player. His leadership skills have greatly contributed to our project's success."</p>
+                <cite>- Colleague</cite>
+            </div>
+            <div class="testimonial">
+                <p>"Working with Santunu was a great experience. He consistently delivers high-quality work and brings innovative ideas to the table."</p>
+                <cite>- Colleague</cite>
+            </div>
+        </section>
+        <section id="contact" class="scroll-reveal fade-in">
+            <h2>Contact Me</h2>
+            <form method="POST" action="" >
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_name">Name:</label>
+                    <input type="text" id="id_name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_email">Email:</label>
+                    <input type="email" id="id_email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="id_comment">Comment:</label>
+                    <textarea id="id_comment" name="comment" class="form-control" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </section>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Santunu Kaysar. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="https://facebook.com/m.santunukaysar" target="_blank">Facebook</a>
+            <a href="https://github.com/SantunuKaysar" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/SantunuKaysar" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+    <script>
+        // click profile picture
+        let img = document.querySelector(".profile-image");
+        let about = document.querySelector("#about");
+
+        img.addEventListener('click', () => {
+            about.scrollIntoView({ behavior: "smooth" });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent default anchor click behavior
+
+                const target = document.querySelector(this.getAttribute('href')); // Get the target section
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Scroll smoothly to the section
+            });
+        });
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navList = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+ 
+
+        // Fade-in effect for sections
+        const sections = document.querySelectorAll('.scroll-reveal');
+        const options = {
+            root: null,
+            threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    let btn = document.querySelector(".btn");
+    btn.addEventListener("click", (event) => {
+    let nameField = document.querySelector("#id_name").value;
+    let emailField = document.querySelector("#id_email").value;
+        if (nameField === "") {
+            alert("Name field cannot be empty. Please enter your name.");
+            event.preventDefault(); // Prevent form submission if name is empty
+        }
+        if (emailField === "") {
+            alert("Email field cannot be empty. Please enter your Email.");
+            event.preventDefault(); // Prevent form submission if name is empty
+        }
+         else {
+            alert("Thank you for connecting with me..");
+        }
+    });
+});
+
+
+    </script>
+</body>
+
+</html>
